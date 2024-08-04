@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Paytm Bill Payment</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #4caf50, #81c784);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            text-align: center;
+        }
+        h1 {
+            color: #4caf50;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #4caf50;
+            color: white;
+            font-size: 18px;
+        }
+        td {
+            cursor: pointer;
+            font-size: 16px;
+        }
+        td:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pay Bills</h1>
+        <table>
+            <tr>
+                <th>Electricity</th>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('bescom', 'electricity')">BESCOM</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('mescom', 'electricity')">MESCOM</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('hescom', 'electricity')">HESCOM</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('gescom', 'electricity')">GESCOM</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('cesc', 'electricity')">CESC</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Water Supply</th>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('bwssb', 'water')">Bangalore Water Supply And Sewerage Board</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('bipure', 'water')">BI Pure Water India</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Recharge</th>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('jio', 'recharge')">Jio</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('vodafone', 'recharge')">Vodafone</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('airtel', 'recharge')">Airtel</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('nokia', 'recharge')">Nokia</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>TV</th>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('sundirect', 'tv')">Sun Direct</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('dth', 'tv')">DTH</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('d2h', 'tv')">D2H</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('tataplay', 'tv')">Tata Play</td>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('hotstar', 'tv')">Hotstar</td>
+            </tr>
+        </table>
+        <table>
+            <tr>
+                <th>Insurance</th>
+            </tr>
+            <tr>
+                <td onclick="showLogoAndForm('lic', 'insurance')">LIC</td>
+            </tr>
+        </table>
+        <div class="logo" id="logo">
+            <img id="bescomLogo" src="https://th.bing.com/th/id/OIP.r1dPfbCJwwiQ9pBdzsO8FAHaKI?w=136&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BESCOM Logo">
+            <img id="mescomLogo" src="https://th.bing.com/th/id/OIP.0vWbKNPu_OjWdEj1aPcmTwHaJk?w=136&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MESCOM Logo">
+            <img id="hescomLogo" src="https://th.bing.com/th/id/OIP.xiVErbHPRGK0oYWhFB_NngAAAA?w=151&h=159&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="HESCOM Logo">
+            <img id="gescomLogo" src="https://th.bing.com/th/id/OIP.ySKJEFztiRCY-zZhFdHBcwHaHa?w=145&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="GESCOM Logo">
+            <img id="cescLogo" src="https://kannada.oneindia.com/img/2019/08/cescom-1564653363.jpg" alt="CESC Logo">
+            <img id="bwssbLogo" src="https://th.bing.com/th/id/OIP.sniEff1E2MVtJuFhRBhN3AHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BWSSB Logo">
+            <img id="bipureLogo" src="https://th.bing.com/th/id/OIP.vHXjVwa5I0Fv_rPR7YKxlgAAAA?w=271&h=91&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BI Pure Water India Logo">
+            <img id="jioLogo" src="https://th.bing.com/th/id/OIP.VzW73p9wtc6rYSGC9OdrZAHaHa?w=200&h=200&c=7&o=5&dpr=1.3&pid=1.7" alt="Jio Logo">
+            <img id="vodafoneLogo" src="https://th.bing.com/th/id/OIP.04exajoGlaLAE-Ogele-6AHaEK?w=263&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Vodafone Logo">
+            <img id="airtelLogo" src="https://th.bing.com/th/id/OIP.tE5rdmNKz_COsdfuM7lCpwHaIF?w=157&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Airtel Logo">
+            <img id="nokiaLogo" src="https://th.bing.com/th/id/OIP.yF055jrDpgqk_FEgDAcUHAAAAA?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Nokia Logo">
+            <img id="sundirectLogo" src="https://th.bing.com/th/id/OIP.aHzPOSyIQUrtsm0vtWirRwHaEc?w=299&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sun Direct Logo">
+            <img id="dthLogo" src="https://th.bing.com/th/id/OIP.kdgDFVupkgABmENRqVNeHQHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DTH Logo">
+            <img id="d2hLogo" src="https://th.bing.com/th/id/OIP.F3KWNbkIRp_nu57OFti_PQHaIR?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="D2H Logo">
+            <img id="tataplayLogo" src="https://th.bing.com/th/id/OIP.-fyXyI07KkwyeRZ8G-GJ2wAAAA?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Tata Play Logo">
+            <img id="hotstarLogo" src="https://th.bing.com/th/id/OIP.GUuI3EBwZuIVu07Z5hIKvQHaD4?w=294&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hotstar Logo">
+            <img id="licLogo" src="https://th.bing.com/th/id/OIP.fZS33CpkFgiXt-XFAa4AkgHaDX?w=288&h=158&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="LIC Logo">
+        </div>
+        <form action="#" method="post" id="paymentForm">
+            <div class="form-group" id="billNumberGroup" style="display:none;">
+                <label for="billNumber" id="billNumberLabel">Bill Number</label>
+                <input type="text" id="billNumber" name="billNumber">
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="netBanking">Net Banking</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        function showLogoAndForm(billType, category) {
+            // Hide all logos
+            var logos = document.querySelectorAll('.logo img');
+            logos.forEach(function(logo) {
+                logo.style.display = 'none';
+            });
+
+            // Show the selected logo
+            var selectedLogo = document.getElementById(billType + 'Logo');
+            if (selectedLogo) {
+                selectedLogo.style.display = 'block';
+            }
+
+            // Adjust form fields based on the selected category
+            var billNumberGroup = document.getElementById('billNumberGroup');
+            var billNumberLabel = document.getElementById('billNumberLabel');
+            var billNumberInput = document.getElementById('billNumber');
+
+            if (category === 'electricity') {
+                billNumberGroup.style.display = 'block';
+                billNumberLabel.textContent = 'Current Bill Number';
+                billNumberInput.name = 'currentBillNumber';
+                billNumberInput.required = true;
+            } else if (category === 'water') {
+                billNumberGroup.style.display = 'block';
+                billNumberLabel.textContent = 'Water Bill Number';
+                billNumberInput.name = 'waterBillNumber';
+                billNumberInput.required = true;
+            } else if (category === 'recharge') {
+                billNumberGroup.style.display = 'block';
+                billNumberLabel.textContent = 'Phone Number';
+                billNumberInput.name = 'phoneNumber';
+                billNumberInput.required = true;
+            } else if (category === 'tv') {
+                billNumberGroup.style.display = 'block';
+                billNumberLabel.textContent = 'Challan Number';
+                billNumberInput.name = 'challanNumber';
+                billNumberInput.required = true;
+            } else if (category === 'insurance') {
+                billNumberGroup.style.display = 'block';
+                billNumberLabel.textContent = 'LIC Number';
+                billNumberInput.name = 'licNumber';
+                billNumberInput.required = true;
+            } else {
+                billNumberGroup.style.display = 'none';
+                billNumberInput.required = false;
+            }
+        }
+    </script>
+</body>
+</html>

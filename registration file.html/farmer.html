@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Paytm Bill Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .logo img {
+            max-width: 100%;
+            height: auto;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pay Bills</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="billType">Bill Type</label>
+                <select id="billType" name="billType" required onchange="showLogo(this.value)">
+                    <option value="">Select Bill Type</option>
+                    <option value="bescom">Electricity - BESCOM</option>
+                    <option value="pwd">Water - Public Works Department (PWD)</option>
+                    <option value="jio">Recharge - Jio</option>
+                    <option value="vodafone">Recharge - Vodafone</option>
+                    <option value="dish">TV - Dish TV</option>
+                </select>
+            </div>
+            <div class="logo" id="logo">
+                <img id="bescomLogo" src="https://www.bing.com/th/id/OGC.cc2f27dfda0fd7d11df6efeb03c854b2?pid=1.7&rurl=https%3a%2f%2fmedia2.giphy.com%2fmedia%2fyN4psF1lMgoaePuOyF%2fsource.gif&ehk=rzv%2bhSIqIC4F%2fIea1m6MoQrS3MOYIkiEC5wM0m8piBo%3d" alt="BESCOM Logo">
+                <img id="pwdLogo" src="https://via.placeholder.com/300?text=PWD" alt="PWD Logo">
+                <img id="jioLogo" src="https://via.placeholder.com/300?text=Jio" alt="Jio Logo">
+                <img id="vodafoneLogo" src="https://via.placeholder.com/300?text=Vodafone" alt="Vodafone Logo">
+                <img id="dishLogo" src="https://via.placeholder.com/300?text=Dish+TV" alt="Dish TV Logo">
+            </div>
+            <div class="form-group">
+                <label for="billNumber">Bill Number</label>
+                <input type="text" id="billNumber" name="billNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="netBanking">Net Banking</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+    <script>
+        function showLogo(billType) {
+            var logos = document.querySelectorAll('.logo img');
+            logos.forEach(function(logo) {
+                logo.style.display = 'none';
+            });
+            var selectedLogo = document.getElementById(billType + 'Logo');
+            if (selectedLogo) {
+                selectedLogo.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

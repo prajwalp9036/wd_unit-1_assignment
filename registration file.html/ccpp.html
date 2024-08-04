@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Bill Payment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            text-align: center;
+        }
+        .logo {
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        h1 {
+            color: #333333;
+            margin-bottom: 20px;
+        }
+        .bill-category {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .bill-category label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .bill-category select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .bill-amount {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .bill-amount label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .bill-amount input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .payment-method {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .payment-method label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .payment-method select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .submit-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .submit-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <img src="https://th.bing.com/th/id/OIP.r1dPfbCJwwiQ9pBdzsO8FAHaKI?w=136&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BESCOM Logo" id="bescomLogo">
+            <img src="https://th.bing.com/th/id/OIP.0vWbKNPu_OjWdEj1aPcmTwHaJk?w=136&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="MESCOM Logo" id="mescomLogo">
+            <img src="https://th.bing.com/th/id/OIP.xiVErbHPRGK0oYWhFB_NngAAAA?w=151&h=159&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="HESCOM Logo" id="hescomLogo">
+            <img src="https://th.bing.com/th/id/OIP.ySKJEFztiRCY-zZhFdHBcwHaHa?w=145&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="GESCOM Logo" id="gescomLogo">
+            <img src="https://kannada.oneindia.com/img/2019/08/cescom-1564653363.jpg" alt="CESC Logo" id="cescLogo">
+            <img src="https://th.bing.com/th/id/OIP.sniEff1E2MVtJuFhRBhN3AHaFj?w=223&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BWSSB Logo" id="bwssbLogo">
+            <img src="https://th.bing.com/th/id/OIP.vHXjVwa5I0Fv_rPR7YKxlgAAAA?w=271&h=91&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="BI Pure Water India Logo" id="bipureLogo">
+            <img src="https://th.bing.com/th/id/OIP.VzW73p9wtc6rYSGC9OdrZAHaHa?w=200&h=200&c=7&o=5&dpr=1.3&pid=1.7" alt="Jio Logo" id="jioLogo">
+            <img src="https://th.bing.com/th/id/OIP.04exajoGlaLAE-Ogele-6AHaEK?w=263&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Vodafone Logo" id="vodafoneLogo">
+            <img src="https://th.bing.com/th/id/OIP.tE5rdmNKz_COsdfuM7lCpwHaIF?w=157&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Airtel Logo" id="airtelLogo">
+            <img src="https://th.bing.com/th/id/OIP.yF055jrDpgqk_FEgDAcUHAAAAA?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Nokia Logo" id="nokiaLogo">
+            <img src="https://th.bing.com/th/id/OIP.aHzPOSyIQUrtsm0vtWirRwHaEc?w=299&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sun Direct Logo" id="sundirectLogo">
+            <img src="https://th.bing.com/th/id/OIP.kdgDFVupkgABmENRqVNeHQHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DTH Logo" id="dth logo">
+            
+            <img src="https://th.bing.com/th/id/OIP.GUuI3EBwZuIVu07Z5hIKvQHaD4?w=294&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hotstar Logo" id="hotstarLogo">
+            <img src="https://th.bing.com/th/id/OIP.VzW73p9wtc6rYSGC9OdrZAHaHa?w=200&h=200&c=7&o=5&dpr=1.3&pid=1.7" alt="Jio Logo" id="jioLogo">
+            <img src="https://th.bing.com/th/id/OIP.04exajoGlaLAE-Ogele-6AHaEK?w=263&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Vodafone Logo" id="vodafoneLogo">
+            <img src="https://th.bing.com/th/id/OIP.tE5rdmNKz_COsdfuM7lCpwHaIF?w=157&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Airtel Logo" id="airtelLogo">
+            <img src="https://th.bing.com/th/id/OIP.yF055jrDpgqk_FEgDAcUHAAAAA?w=269&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Nokia Logo" id="nokiaLogo">
+            <img src="https://th.bing.com/th/id/OIP.aHzPOSyIQUrtsm0vtWirRwHaEc?w=299&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Sun Direct Logo" id="sundirectLogo">
+            <img src="https://th.bing.com/th/id/OIP.kdgDFVupkgABmENRqVNeHQHaHa?w=180&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="DTH Logo" id="dthLogo">
+            <img src="https://th.bing.com/th/id/OIP.F3KWNbkIRp_nu57OFti_PQHaIR?w=135&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="D2H Logo" id="d2hLogo">
+            <img src="https://th.bing.com/th/id/OIP.-fyXyI07KkwyeRZ8G-GJ2wAAAA?w=243&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Tata Play Logo" id="tataplayLogo">
+            <img src="https://th.bing.com/th/id/OIP.GUuI3EBwZuIVu07Z5hIKvQHaD4?w=294&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hotstar Logo" id="hotstarLogo">
+            <img src="https://th.bing.com/th/id/OIP.GUuI3EBwZuIVu07Z5hIKvQHaD4?w=294&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Hotstar Logo" id="hotstarLogo">
+        </div>
+        <h1>Pay Bills</h1>
+        <div class="bill-category">
+            <label for="bill-category">Select Bill Category:</label>
+            <select id="bill-category" onchange="showForm(this.value)">
+                <option value="">Select Bill Category</option>
+                <option value="electricity">Electricity</option>
+                <option value="water">Water Supply</option>
+                <option value="recharge">Phone Recharge</option>
+                <option value="tv">TV Recharge</option>
+                <option value="insurance">Insurance (LIC)</option>
+            </select>
+        </div>
+        <div id="form-container"></div>
+    </div>
+
+    <script>    
+        function showForm(category) {
+            var formContainer = document.getElementById('form-container');
+            formContainer.innerHTML = '';
+
+            if (category === 'electricity') {
+                formContainer.innerHTML = `
+                    <div class="bill-amount">
+                        <label for="electricity-amount">Enter Amount:</label>
+                        <input type="number" id="electricity-amount" name="electricity-amount" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="electricity-payment-method">Select Payment Method:</label>
+                        <select id="electricity-payment-method" name="electricity-payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="netBanking">Net Banking</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="payBill('Electricity')">Pay Now</button>
+                `;
+            } else if (category === 'water') {
+                formContainer.innerHTML = `
+                    <div class="bill-amount">
+                        <label for="water-amount">Enter Amount:</label>
+                        <input type="number" id="water-amount" name="water-amount" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="water-payment-method">Select Payment Method:</label>
+                        <select id="water-payment-method" name="water-payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="netBanking">Net Banking</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="payBill('Water Supply')">Pay Now</button>
+                `;
+            } else if (category === 'recharge') {
+                formContainer.innerHTML = `
+                    <div class="bill-amount">
+                        <label for="phone-amount">Enter Amount:</label>
+                        <input type="number" id="phone-amount" name="phone-amount" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="phone-payment-method">Select Payment Method:</label>
+                        <select id="phone-payment-method" name="phone-payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="netBanking">Net Banking</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="payBill('Phone Recharge')">Pay Now</button>
+                `;
+            } else if (category === 'tv') {
+                formContainer.innerHTML = `
+                    <div class="bill-amount">
+                        <label for="tv-amount">Enter Amount:</label>
+                        <input type="number" id="tv-amount" name="tv-amount" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="tv-payment-method">Select Payment Method:</label>
+                        <select id="tv-payment-method" name="tv-payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="netBanking">Net Banking</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="payBill('TV Recharge')">Pay Now</button>
+                `;
+            } else if (category === 'insurance') {
+                formContainer.innerHTML = `
+                    <div class="bill-amount">
+                        <label for="insurance-amount">Enter Amount:</label>
+                        <input type="number" id="insurance-amount" name="insurance-amount" required>
+                    </div>
+                    <div class="payment-method">
+                        <label for="insurance-payment-method">Select Payment Method:</label>
+                        <select id="insurance-payment-method" name="insurance-payment-method" required>
+                            <option value="">Select Payment Method</option>
+                            <option value="creditCard">Credit Card</option>
+                            <option value="debitCard">Debit Card</option>
+                            <option value="netBanking">Net Banking</option>
+                            <option value="upi">UPI</option>
+                        </select>
+                    </div>
+                    <button class="submit-button" onclick="payBill('Insurance (LIC)')">Pay Now</button>
+                `;
+            }
+        }
+
+        function payBill(category) {
+            var amountField, methodField;
+
+            switch (category) {
+                case 'Electricity':
+                    amountField = document.getElementById('electricity-amount');
+                    methodField = document.getElementById('electricity-payment-method');
+                    break;
+                case 'Water Supply':
+                    amountField = document.getElementById('water-amount');
+                    methodField = document.getElementById('water-payment-method');
+                    break;
+                case 'Phone Recharge':
+                    amountField = document.getElementById('phone-amount');
+                    methodField = document.getElementById('phone-payment-method');
+                    break;
+                case 'TV Recharge':
+                    amountField = document.getElementById('tv-amount');
+                    methodField = document.getElementById('tv-payment-method');
+                    break;
+                case 'Insurance (LIC)':
+                    amountField = document.getElementById('insurance-amount');
+                    methodField = document.getElementById('insurance-payment-method');
+                    break;
+                default:
+                    return;
+            }
+
+            if (amountField && methodField && amountField.value && methodField.value) {
+                alert(`Paid ${category} bill amount: ${amountField.value} via ${methodField.value}`);
+                // Here you can add your backend integration to process the payment
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+    </script>
+</body>
+</html>

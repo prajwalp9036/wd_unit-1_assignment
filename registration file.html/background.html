@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @keyframes changeimg{
+            0%{background-image: url("https://th.bing.com/th/id/OIP.kUAsfICxPeOP4FIFxgSNjgHaEo?rs=1&pid=ImgDetMain");}
+            20%{background-image: url("https://th.bing.com/th/id/OIP.hsBEV97drcYyZ4DJLndoLQHaE7?w=268&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");}
+            40%{background-image: url("https://th.bing.com/th/id/OIP.HfkKKKpDYmEsPqmjlWLTtAHaE6?w=261&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");}
+            60%{background-image: url("https://th.bing.com/th/id/OIP.lDhaTeNZ11eYP7wxDucx5wHaEH?w=286&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");}
+            80%{background-image: url("https://th.bing.com/th/id/OIP.7zyRTeCiz7GFZGK3UJCK-gHaFw?w=257&h=199&c=7&r=0&o=5&dpr=1.3&pid=1.7");}
+            100%{background-image: url("https://th.bing.com/th/id/OIP._uJShe8MkukBgEFyiL_5qwHaEO?w=282&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");}
+        }
+        body{
+            background-image:url("https://th.bing.com/th/id/OIP.NC1mizWrz_WUkIRj1ouunQHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7");
+            background-repeat: no-repeat;
+                background-size: 1500px 600px;
+                animation iteration-count: infinite;
+                animation-name: changeimg;
+                animation-duration: 10s;
+                font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h1 {
+            text-align: center;
+            color: #4CAF50;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Pay Bills</h1>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="billType">Bill Type</label>
+                <select id="billType" name="billType" required>
+                    <option value="">Select Bill Type</option>
+                    <option value="electricity">Electricity</option>
+                    <option value="water">Water</option>
+                    <option value="internet">Internet</option>
+                    <option value="phone">Phone</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="billNumber">Bill Number</label>
+                <input type="text" id="billNumber" name="billNumber" required>
+            </div>
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" name="amount" required>
+            </div>
+            <div class="form-group">
+                <label for="paymentMethod">Payment Method</label>
+                <select id="paymentMethod" name="paymentMethod" required>
+                    <option value="">Select Payment Method</option>
+                    <option value="creditCard">Credit Card</option>
+                    <option value="debitCard">Debit Card</option>
+                    <option value="netBanking">Net Banking</option>
+                    <option value="upi">UPI</option>
+                </select>
+            </div>
+            <button type="submit">Pay Now</button>
+        </form>
+    </div>
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
